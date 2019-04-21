@@ -1,0 +1,144 @@
+
+spineboy-ess.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+front-foot
+  rotate: false
+  xy: 412, 2
+  size: 539, 288
+  orig: 539, 288
+  offset: 0, 0
+  index: -1
+front-shin
+  rotate: false
+  xy: 2, 247
+  size: 351, 774
+  orig: 351, 774
+  offset: 0, 0
+  index: -1
+gun
+  rotate: true
+  xy: 355, 335
+  size: 686, 334
+  orig: 686, 334
+  offset: 0, 0
+  index: -1
+rear-shin
+  rotate: false
+  xy: 691, 292
+  size: 323, 729
+  orig: 323, 729
+  offset: 0, 0
+  index: -1
+rear-thigh
+  rotate: true
+  xy: 2, 5
+  size: 240, 408
+  orig: 240, 408
+  offset: 0, 0
+  index: -1
+
+spineboy-ess2.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+eye-indifferent
+  rotate: false
+  xy: 903, 430
+  size: 107, 86
+  orig: 107, 86
+  offset: 0, 0
+  index: -1
+eye-surprised
+  rotate: true
+  xy: 903, 351
+  size: 77, 98
+  orig: 77, 98
+  offset: 0, 0
+  index: -1
+front-bracer
+  rotate: true
+  xy: 484, 3
+  size: 251, 346
+  orig: 251, 346
+  offset: 0, 0
+  index: -1
+front-thigh
+  rotate: true
+  xy: 2, 2
+  size: 203, 480
+  orig: 203, 480
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 416, 518
+  size: 457, 603
+  orig: 457, 603
+  offset: 0, 0
+  index: -1
+neck
+  rotate: true
+  xy: 832, 98
+  size: 156, 176
+  orig: 156, 176
+  offset: 0, 0
+  index: -1
+rear-foot
+  rotate: false
+  xy: 416, 256
+  size: 485, 260
+  orig: 485, 260
+  offset: 0, 0
+  index: -1
+torso
+  rotate: false
+  xy: 2, 207
+  size: 412, 768
+  orig: 412, 768
+  offset: 0, 0
+  index: -1
+
+spineboy-ess3.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+front-fist-closed
+  rotate: false
+  xy: 2, 244
+  size: 322, 351
+  orig: 322, 351
+  offset: 0, 0
+  index: -1
+front-fist-open
+  rotate: false
+  xy: 2, 597
+  size: 367, 372
+  orig: 367, 372
+  offset: 0, 0
+  index: -1
+front-upper-arm
+  rotate: true
+  xy: 371, 770
+  size: 199, 418
+  orig: 199, 418
+  offset: 0, 0
+  index: -1
+rear-bracer
+  rotate: true
+  xy: 2, 2
+  size: 240, 303
+  orig: 240, 303
+  offset: 0, 0
+  index: -1
+rear-upper-arm
+  rotate: true
+  xy: 371, 588
+  size: 180, 371
+  orig: 180, 371
+  offset: 0, 0
+  index: -1
