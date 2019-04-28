@@ -6,11 +6,17 @@ using System.IO;
 public class TextReader : MonoBehaviour
 {
 
+
     private string path = "Assets/Resources/QuestionSets/";
     public string fileName;
-    public List<QuestionData> questionSet;
+    public string roundName;
 
-    public void Start()
+    [HideInInspector]
+    public RoundData round;
+
+    private List<QuestionData> questionSet;
+
+    public RoundData ReadQuestionSet()
     {
 
         questionSet = new List<QuestionData>();
@@ -63,6 +69,14 @@ public class TextReader : MonoBehaviour
         } while (text != null);
 
         reader.Close();
+
+        round = new RoundData
+        {
+            name = roundName,
+            questions = questionSet.ToArray()
+        };
+
+        return round;
 
     }
 

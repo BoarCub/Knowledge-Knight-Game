@@ -9,7 +9,6 @@ public class CharacterControl : MonoBehaviour
 
     private bool isMoving = false;
     private bool facingRight = true;
-    private float targetX;
 
     public float walkingSpeed = 3f;
 
@@ -17,6 +16,7 @@ public class CharacterControl : MonoBehaviour
     CharacterAnimator animator;
 
     private Waypoint[] waypoints;
+    private Waypoint currentWaypoint;
 
     // Start is called before the first frame update
     void Start()
@@ -33,20 +33,22 @@ public class CharacterControl : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("Jump");
             WalkToWaypoint();
         }
         
-        if(isMoving && rb.position.x >= targetX)
+        if(isMoving && rb.position.x >= currentWaypoint.transform.position.x)
         {
             rb.velocity = new Vector3(0f, rb.velocity.y);
+            rb.transform.position =  new Vector2 (currentWaypoint.transform.position.x,
+                rb.transform.position.y);
             isMoving = false;
             animator.PlayIdleAnimation();
+            currentWaypoint.ReachWaypoint();
         }
 
     }
 
-    void WalkToWaypoint()
+    public void WalkToWaypoint()
     {
 
         List<Waypoint> waypointsToRight = new List<Waypoint>();
@@ -63,24 +65,24 @@ public class CharacterControl : MonoBehaviour
         if (waypointsToRight.Count > 0)
         {
 
-            float x = waypointsToRight[0].transform.position.x;
+            Waypoint wMax = waypointsToRight[0];
             
             for(int i = 1; i < waypointsToRight.Count; i++)
             {
                 
-                float wX = waypointsToRight[i].transform.position.x;
+                Waypoint w = waypointsToRight[i];
 
-                if(x - rb.transform.position.x >
-                    wX - rb.transform.position.x)
+                if(wMax.transform.position.x - rb.transform.position.x >
+                   w.transform.position.x - rb.transform.position.x)
                 {
-                    x = wX;
+                    wMax = w;
                 }
             }
 
             facingRight = true;
             isMoving = true;
 
-            targetX = x;
+            currentWaypoint = wMax;
             rb.velocity = new Vector2(walkingSpeed, rb.velocity.y);
 
             animator.PlayWalkAnimation();
