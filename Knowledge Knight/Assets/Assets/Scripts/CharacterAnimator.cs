@@ -32,8 +32,8 @@ public class CharacterAnimator : MonoBehaviour
 
     private SkeletonAnimation skeletonAnimation;
 
-    public Spine.AnimationState animationState;
-    public Spine.Skeleton skeleton;
+    private Spine.AnimationState animationState;
+    private Spine.Skeleton skeleton;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +51,16 @@ public class CharacterAnimator : MonoBehaviour
     public void PlayIdleAnimation()
     {
         animationState.SetAnimation(0, idleAnimation, true);
-
     }
+
+    public void PlayPointAnimation()
+    {
+        animationState.SetAnimation(0, pointAnimation, false);
+    }
+
+    public void PlayDeathAnimation()
+    {
+        animationState.SetAnimation(0, deathAnimation, false);
+    }
+
 }

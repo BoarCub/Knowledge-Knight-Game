@@ -31,7 +31,6 @@ public class Trivia : MonoBehaviour
         if (isCorrect)
         {
             triviaBoardImage.color = correctColor;
-            Debug.Log("correct");
         }
         else
         {
@@ -45,7 +44,17 @@ public class Trivia : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
-        FindObjectOfType<CharacterControl>().WalkToWaypoint();
+        if (isCorrect)
+        {
+            StartCoroutine(waypoint.enemy.LoseBattle());
+            StartCoroutine(FindObjectOfType<CharacterControl>().WinBattle());
+        }
+        else
+        {
+            StartCoroutine(waypoint.enemy.WinBattle());
+            StartCoroutine(FindObjectOfType<CharacterControl>().LoseBattle());
+        }
+
     }
     
     public void ShowQuestion(QuestionData question)

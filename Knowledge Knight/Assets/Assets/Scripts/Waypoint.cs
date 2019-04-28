@@ -8,6 +8,8 @@ public class Waypoint : MonoBehaviour
     public QuestionData question;
     public bool isTriviaWaypoint;
 
+    public EnemyControl enemy;
+
     private Trivia trivia;
 
     private void Start()
@@ -25,6 +27,7 @@ public class Waypoint : MonoBehaviour
 
     private void StartTrivia()
     {
+        trivia.SetWaypoint(this);
         trivia.ShowQuestion(question);
     }
 

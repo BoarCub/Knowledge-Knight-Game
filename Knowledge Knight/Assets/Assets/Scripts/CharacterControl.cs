@@ -10,7 +10,7 @@ public class CharacterControl : MonoBehaviour
     private bool isMoving = false;
     private bool facingRight = true;
 
-    public float walkingSpeed = 3f;
+    public float walkingSpeed = 6f;
 
     Rigidbody2D rb;
     CharacterAnimator animator;
@@ -46,6 +46,20 @@ public class CharacterControl : MonoBehaviour
             currentWaypoint.ReachWaypoint();
         }
 
+    }
+
+    public IEnumerator LoseBattle()
+    {
+        yield return new WaitForSeconds(0.1f);
+        animator.PlayDeathAnimation();
+    }
+
+    public IEnumerator WinBattle()
+    {
+        animator.PlayPointAnimation();
+        yield return new WaitForSeconds(0.75f);
+        animator.PlayWalkAnimation();
+        WalkToWaypoint();
     }
 
     public void WalkToWaypoint()
