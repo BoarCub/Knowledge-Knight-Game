@@ -8,7 +8,6 @@ public class CharacterControl : MonoBehaviour
 {
 
     private bool isMoving = false;
-    private bool facingRight = true;
 
     public float walkingSpeed = 6f;
 
@@ -25,16 +24,19 @@ public class CharacterControl : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<CharacterAnimator>();
         animator.PlayIdleAnimation();
+
+        StartCoroutine(DelayedWalk());
+    }
+
+    public IEnumerator DelayedWalk()
+    {
+        yield return new WaitForSeconds(1);
+        WalkToWaypoint();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            WalkToWaypoint();
-        }
         
         if(isMoving && rb.position.x >= currentWaypoint.transform.position.x)
         {
@@ -93,7 +95,6 @@ public class CharacterControl : MonoBehaviour
                 }
             }
 
-            facingRight = true;
             isMoving = true;
 
             currentWaypoint = wMax;

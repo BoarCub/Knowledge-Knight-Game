@@ -8,6 +8,11 @@ public class Waypoint : MonoBehaviour
     public QuestionData question;
     public bool isTriviaWaypoint;
 
+    private DialogueManager dialogueManager;
+    public Dialogue[] dialogues;
+    private List<Dialogue> dialogueList;
+    public bool isDialogueWaypoint;
+
     public EnemyControl enemy;
 
     private Trivia trivia;
@@ -22,6 +27,16 @@ public class Waypoint : MonoBehaviour
         if (isTriviaWaypoint)
         {
             StartTrivia();
+        } else if (isDialogueWaypoint)
+        {
+            dialogueList = new List<Dialogue>();
+            dialogueManager = FindObjectOfType<DialogueManager>();
+            dialogueManager.SetWaypoint(this);
+            foreach (Dialogue dialogue in dialogues)
+            {
+                dialogueList.Add(dialogue);
+            }
+            dialogueManager.StartDialogue(dialogueList[0]);
         }
     }
 
@@ -29,6 +44,21 @@ public class Waypoint : MonoBehaviour
     {
         trivia.SetWaypoint(this);
         trivia.ShowQuestion(question);
+    }
+
+    public void NextDialogue()
+    {
+        dialogueList.RemoveAt(0);
+        if(dialogueList.Count > 0)
+        {
+            dialogueManager.StartDialogue(dialogueList[0]);
+        }
+        else
+        {
+            dialogueManager.CloseDialogue();
+            FindObjectOfType<CharacterControl>().WalkToWaypoint();
+            FindObjectOfType<BossControl>().DialogueFinished();
+        }
     }
 
 }

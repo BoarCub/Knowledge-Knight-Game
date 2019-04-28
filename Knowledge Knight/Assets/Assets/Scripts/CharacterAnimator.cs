@@ -63,4 +63,9 @@ public class CharacterAnimator : MonoBehaviour
         animationState.SetAnimation(0, deathAnimation, false);
     }
 
+    public void PlayRunningAnimation()
+    {
+        animationState.SetAnimation(0, runAnimation, true);
+    }
+
 }

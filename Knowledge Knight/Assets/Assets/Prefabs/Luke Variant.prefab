@@ -19,6 +19,20 @@ MonoBehaviour:
   hitAnimation: hit
   deathAnimation: death
   pointAnimation: point
+--- !u!114 &8624869793851309101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7053734021077230217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f061b754967845b47af8e773d3bc043c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRunningAway: 1
+  runningSpeed: 12
 --- !u!1001 &3525350954514527957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29,7 +43,7 @@ PrefabInstance:
     - target: {fileID: 5841016690192241756, guid: 62f08c61337a7874786f505665402b96,
         type: 3}
       propertyPath: m_Name
-      value: Luke
+      value: Luke Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5841016690192241755, guid: 62f08c61337a7874786f505665402b96,
         type: 3}
