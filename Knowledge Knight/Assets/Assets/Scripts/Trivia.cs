@@ -25,6 +25,8 @@ public class Trivia : MonoBehaviour
     private List<QuestionData> questionPool = new List<QuestionData>();
 
     private Waypoint waypoint;
+    private GameMenuManager gameMenu;
+
 
     public IEnumerator AnswerButtonClicked(bool isCorrect)
     {
@@ -53,6 +55,8 @@ public class Trivia : MonoBehaviour
         {
             StartCoroutine(waypoint.enemy.WinBattle());
             StartCoroutine(FindObjectOfType<CharacterControl>().LoseBattle());
+            yield return new WaitForSeconds(3);
+            gameMenu.OpenLoseMenu();
         }
 
     }
@@ -89,6 +93,7 @@ public class Trivia : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        gameMenu = FindObjectOfType<GameMenuManager>();
         triviaAnimator = triviaBoard.GetComponent<Animator>();
         triviaBoardImage = triviaBoard.GetComponent<RawImage>();
 

@@ -13,6 +13,8 @@ public class Waypoint : MonoBehaviour
     private List<Dialogue> dialogueList;
     public bool isDialogueWaypoint;
 
+    public bool isFinalWaypoint;
+
     public EnemyControl enemy;
 
     private Trivia trivia;
@@ -37,6 +39,9 @@ public class Waypoint : MonoBehaviour
                 dialogueList.Add(dialogue);
             }
             dialogueManager.StartDialogue(dialogueList[0]);
+        } else if (isFinalWaypoint)
+        {
+            FindObjectOfType<GameMenuManager>().OpenWinMenu();
         }
     }
 
