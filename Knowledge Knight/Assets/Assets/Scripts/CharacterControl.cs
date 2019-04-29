@@ -8,6 +8,7 @@ public class CharacterControl : MonoBehaviour
 {
 
     private bool isMoving = false;
+    private bool isInitialized = false;
 
     public float walkingSpeed = 6f;
 
@@ -20,12 +21,12 @@ public class CharacterControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        waypoints = FindObjectsOfType<Waypoint>();
+        /*waypoints = FindObjectsOfType<Waypoint>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<CharacterAnimator>();
         animator.PlayIdleAnimation();
-
-        StartCoroutine(DelayedWalk());
+        
+        StartCoroutine(DelayedWalk());*/
     }
 
     public IEnumerator DelayedWalk()
@@ -37,6 +38,18 @@ public class CharacterControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (!isInitialized)
+        {
+            waypoints = FindObjectsOfType<Waypoint>();
+            rb = GetComponent<Rigidbody2D>();
+            animator = GetComponent<CharacterAnimator>();
+            animator.PlayIdleAnimation();
+
+            StartCoroutine(DelayedWalk());
+
+            isInitialized = true;
+        }
         
         if(isMoving && rb.position.x >= currentWaypoint.transform.position.x)
         {

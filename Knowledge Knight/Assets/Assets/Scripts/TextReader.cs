@@ -8,8 +8,6 @@ public class TextReader : MonoBehaviour
 
 
     private string path = "Assets/Resources/QuestionSets/";
-    public string fileName;
-    public string roundName;
 
     [HideInInspector]
     public RoundData round;
@@ -23,7 +21,7 @@ public class TextReader : MonoBehaviour
 
         RoundData round = new RoundData();
 
-        StreamReader reader = new StreamReader(path + fileName);
+        StreamReader reader = new StreamReader(path + FindObjectOfType<Persistent>().textFile);
 
         string question;
 
@@ -72,7 +70,6 @@ public class TextReader : MonoBehaviour
 
         round = new RoundData
         {
-            name = roundName,
             questions = questionSet.ToArray()
         };
 
