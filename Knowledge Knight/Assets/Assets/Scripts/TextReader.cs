@@ -6,8 +6,7 @@ using System.IO;
 public class TextReader : MonoBehaviour
 {
 
-
-    private string path = "Assets/Resources/QuestionSets/";
+    private string path = "/Resources/QuestionSets/";
 
     [HideInInspector]
     public RoundData round;
@@ -21,7 +20,7 @@ public class TextReader : MonoBehaviour
 
         RoundData round = new RoundData();
 
-        StreamReader reader = new StreamReader(path + FindObjectOfType<Persistent>().textFile);
+        StreamReader reader = new StreamReader(Application.dataPath + path + FindObjectOfType<Persistent>().textFile);
 
         string question;
 

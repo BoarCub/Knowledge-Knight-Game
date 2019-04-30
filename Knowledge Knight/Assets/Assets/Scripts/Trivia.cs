@@ -27,6 +27,8 @@ public class Trivia : MonoBehaviour
     private Waypoint waypoint;
     private GameMenuManager gameMenu;
 
+    private bool isInitialized = false;
+
 
     public IEnumerator AnswerButtonClicked(bool isCorrect)
     {
@@ -91,17 +93,21 @@ public class Trivia : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    private void Start()
+    private void Update()
     {
-        gameMenu = FindObjectOfType<GameMenuManager>();
-        triviaAnimator = triviaBoard.GetComponent<Animator>();
-        triviaBoardImage = triviaBoard.GetComponent<RawImage>();
+        if (!isInitialized)
+        {
+            gameMenu = FindObjectOfType<GameMenuManager>();
+            triviaAnimator = triviaBoard.GetComponent<Animator>();
+            triviaBoardImage = triviaBoard.GetComponent<RawImage>();
 
-        TextReader textReader = FindObjectOfType<TextReader>();
-        round = textReader.ReadQuestionSet();
-        RetrieveQuestions();
+            TextReader textReader = FindObjectOfType<TextReader>();
+            round = textReader.ReadQuestionSet();
+            RetrieveQuestions();
 
-        triviaBoard.SetActive(true);
+            isInitialized = true;
+        }
+        
 
     }
 
