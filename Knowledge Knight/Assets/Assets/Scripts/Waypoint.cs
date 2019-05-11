@@ -51,6 +51,14 @@ public class Waypoint : MonoBehaviour
         trivia.ShowQuestion(question);
     }
 
+    public void RemoveAllDialogue()
+    {
+        while(dialogueList.Count > 1)
+        {
+            dialogueList.RemoveAt(1);
+        }
+    }
+
     public void NextDialogue()
     {
         dialogueList.RemoveAt(0);

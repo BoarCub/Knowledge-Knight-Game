@@ -28,7 +28,7 @@ public class EnemyControl : MonoBehaviour
     public IEnumerator WinBattle()
     {
         animator.PlayPointAnimation();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         rb.transform.localScale = new Vector2(rb.transform.localScale.x * -1
             * Mathf.Sign(walkingSpeed), rb.transform.localScale.y);
         animator.PlayWalkAnimation();

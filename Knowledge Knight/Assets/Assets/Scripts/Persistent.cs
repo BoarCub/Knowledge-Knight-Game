@@ -7,6 +7,7 @@ public class Persistent : MonoBehaviour
 {
 
     public string textFile = "Set1Easy.txt";
+    public string textFileHard;
 
     private void Start()
     {

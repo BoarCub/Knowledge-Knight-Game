@@ -29,6 +29,8 @@ public class Trivia : MonoBehaviour
 
     private bool isInitialized = false;
 
+    private CharacterControl character;
+
 
     public IEnumerator AnswerButtonClicked(bool isCorrect)
     {
@@ -39,7 +41,6 @@ public class Trivia : MonoBehaviour
         else
         {
             triviaBoardImage.color = incorrectColor;
-            Debug.Log("incorrect");
         }
 
         yield return new WaitForSeconds(1);
@@ -51,12 +52,12 @@ public class Trivia : MonoBehaviour
         if (isCorrect)
         {
             StartCoroutine(waypoint.enemy.LoseBattle());
-            StartCoroutine(FindObjectOfType<CharacterControl>().WinBattle());
+            StartCoroutine(character.WinBattle());
         }
         else
         {
             StartCoroutine(waypoint.enemy.WinBattle());
-            StartCoroutine(FindObjectOfType<CharacterControl>().LoseBattle());
+            StartCoroutine(character.LoseBattle());
             yield return new WaitForSeconds(3);
             gameMenu.OpenLoseMenu();
         }
@@ -97,6 +98,9 @@ public class Trivia : MonoBehaviour
     {
         if (!isInitialized)
         {
+
+            character = FindObjectOfType<CharacterControl>();
+
             gameMenu = FindObjectOfType<GameMenuManager>();
             triviaAnimator = triviaBoard.GetComponent<Animator>();
             triviaBoardImage = triviaBoard.GetComponent<RawImage>();
@@ -131,8 +135,16 @@ public class Trivia : MonoBehaviour
         {
             if (w.isTriviaWaypoint)
             {
-                w.question = questionPool[0];
-                questionPool.RemoveAt(0);
+                if (questionPool.Count > 0)
+                {
+                    w.question = questionPool[0];
+                    questionPool.RemoveAt(0);
+                }
+                else
+                {
+                    character.waypoints.Remove(w);
+                    Destroy(w.enemy.gameObject);
+                }
             }
         }
 

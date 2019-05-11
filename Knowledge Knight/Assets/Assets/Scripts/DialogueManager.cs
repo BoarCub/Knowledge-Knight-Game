@@ -67,6 +67,14 @@ public class DialogueManager : MonoBehaviour
         dialogueAnimator.SetBool("isOpen", false);
     }
 
+    public void SkipDialogue()
+    {
+
+        currentWaypoint.RemoveAllDialogue();
+        EndDialogue();
+
+    }
+
     private void EndDialogue()
     {
         currentWaypoint.NextDialogue();

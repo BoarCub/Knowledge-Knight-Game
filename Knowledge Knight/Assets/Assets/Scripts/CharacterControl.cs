@@ -15,7 +15,7 @@ public class CharacterControl : MonoBehaviour
     Rigidbody2D rb;
     CharacterAnimator animator;
 
-    private Waypoint[] waypoints;
+    public List<Waypoint> waypoints;
     private Waypoint currentWaypoint;
 
     // Start is called before the first frame update
@@ -41,7 +41,13 @@ public class CharacterControl : MonoBehaviour
 
         if (!isInitialized)
         {
-            waypoints = FindObjectsOfType<Waypoint>();
+            waypoints = new List<Waypoint>();
+            Waypoint[] waypointsTemporary = FindObjectsOfType<Waypoint>();
+            foreach (Waypoint w in waypointsTemporary)
+            {
+                waypoints.Add(w);
+            }
+
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<CharacterAnimator>();
             animator.PlayIdleAnimation();
