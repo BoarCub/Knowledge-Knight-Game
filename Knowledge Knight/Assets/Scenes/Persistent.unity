@@ -141,8 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab1c4260d2d08834a866ef5f0baba7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textFile: FBLA History Easy.txt
-  textFileHard: 
+  textFile: Advertising Easy.txt
+  textFileHard: Advertising Hard.txt
 --- !u!4 &567517192
 Transform:
   m_ObjectHideFlags: 0

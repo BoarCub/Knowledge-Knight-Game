@@ -58,7 +58,6 @@ public class MainMenu : MonoBehaviour
 
     public void InstructionsNext()
     {
-        Debug.Log("Continue");
         if(instructionsIndex < instructionPanels.Length - 1)
         {
             instructionPanels[instructionsIndex].SetActive(false);
@@ -73,7 +72,6 @@ public class MainMenu : MonoBehaviour
 
     public void InstructionsBack()
     {
-        Debug.Log("Back");
         instructionsAnimator.SetBool("isOpen", false);
     }
 

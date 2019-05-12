@@ -3,19 +3,9 @@ Societies that value equality over efficiency will generally have which one of t
 (C) a more equal distribution of income
 (I) higher rates of economic growth
 (I) small public sectors with limited powers
-(I) constitutional restrictions on income redistribution policies
+(I) constitutional restrictions on income redistribution policies
 
-In 2007 the GDP deflator was 125 and nominal GDP was $9.9 trillion. In 2008 the GDP
-deflator was 130 and nominal GDP was $11.7 trillion. How much did real GDP (expressed
-in 2007 dollars) increase during this time period?
-
-(I) $0.75 trillion
-(I) $1.80 trillion
-(I) $2.27 trillion
-(C) $1.35 trillion
-
-The economic principle that states that individuals or nations can gain by specializing in the
-production of goods where they have the lowest opportunity cost is called:
+The economic principle that states that individuals or nations can gain by specializing in the production of goods where they have the lowest opportunity cost is called:
 
 (I) law of unintended consequences
 (I) law of absolute advantage
@@ -27,30 +17,27 @@ A firm in perfect competition has a demand curve that is:
 (C) horizontal at the market price
 (I) downward sloping
 (I) upward sloping
-(I) equal to the firm's total revenue curve
+(I) equal to the total revenue curve of a firm
 
-If the dollar loses value in comparison to other world currencies, this will cause which one
-of the following?
+If the dollar loses value in comparison to other world currencies, this will cause which one of the following?
 
-(I) the demand for the dollar to decline and encourage investment in the U. S. economy
-(I) the demand for the dollar to increase and encourage investment in the U. S. economy
-(I) the demand for the dollar to increase and discourage investment in the U. S. economy
-(C) the demand for the dollar to decline and discourage investment in the U. S. economy
+(I) the demand for the dollar to decline and encourage investment in the US economy
+(I) the demand for the dollar to increase and encourage investment in the US economy
+(I) the demand for the dollar to increase and discourage investment in the US economy
+(C) the demand for the dollar to decline and discourage investment in the US economy
 
-If restrictive monetary policy is required to address a serious inflationary problem, it is
-likely that the money supply will:
+If restrictive monetary policy is required to address a serious inflationary problem, it is likely that the money supply will:
 
 (C) contract and economic output will be reduced in the short run
 (I) contract and economic output will increase in the short run
 (I) expand and economic output will be reduced in the short run
 (I) expand and economic output will increase in the short run
 
-Which of the following describes contractionary fiscal policy?
+Which describes contractionary fiscal policy?
 
 (I) Increases Government Spending
 (I) Decreases Taxes (increases disposable income)
-(C) Increases Taxes (increases disposable income)
-(I) Both A and B
+(C) Increases Taxes (decreases disposable income)
 
 A non-voting share that pays a fixed dividend is called
 
@@ -65,13 +52,7 @@ What type of warranty is it when assurances are made in the sale of a product du
 (I) Technical Warranty
 
 The amount you get charged per writing a check is called 
-(I). checking fee
+
+(I) checking fee
 (I) deposit fee
 (C) service fee
-
-
-
-
-
-
-

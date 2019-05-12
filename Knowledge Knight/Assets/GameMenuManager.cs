@@ -41,6 +41,9 @@ public class GameMenuManager : MonoBehaviour
 
     public void NextLevel()
     {
+        Persistent persistent = FindObjectOfType<Persistent>();
+        persistent.textFile = persistent.textFileHard;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
